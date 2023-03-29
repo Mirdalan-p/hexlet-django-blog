@@ -3,8 +3,10 @@
 {% block title %}Эксперименты с Django на Хекслете. Статьи{% endblock %}
 
 {% block content %}
-    <h1>Учебный материал:
-        {{ text }}
-    </h1>
-    <p>{{ tags|join:', ' }}</p>
+        {% if article_id and tags %}
+                <h1>Статья номер {{ article_id }}. Тег {{ tags }} </h1>
+        {% else %}
+                <div>Статьи</div>
+        {% endif %}
+
 {% endblock %}

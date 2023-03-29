@@ -17,8 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from hexlet_django_blog import views
 
+
 urlpatterns = [
-    path('', views.index),
+    path('', views.indexView.as_view(template_name='base.html')),
     path('article/', include('hexlet_django_blog.article.urls')),  # <- новая строчка
     path('about/', views.about),
 ]
