@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.indexView.as_view(template_name='base.html')),
     path('article/', include('hexlet_django_blog.article.urls')),  # <- новая строчка
     path('about/', views.about),
+    path('admin/', admin.site.urls),
 ]
